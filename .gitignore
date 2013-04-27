@@ -1,5 +1,11 @@
+#Eclipse
+
 .project
 .classpath
 .cache
 .settings/
 bin/
+
+#twitter4j
+
+src/twitter4j.properties
