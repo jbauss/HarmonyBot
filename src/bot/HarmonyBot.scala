@@ -23,6 +23,11 @@ object HarmonyBot {
 //    val twitterStream = TwitterStreamFactory.getSingleton();
 //    twitterStream.addListener(harmonyListener)
 //    twitterStream.user();
+    
+	  println(generateCompliment())
+  }
+  
+  def generateCompliment() : String = {
 	  val fileReader = new FileReader()
 	  
 	  val sentenceTemplate = fileReader.getRandomLine(SENTENCE_FILE)
@@ -30,16 +35,16 @@ object HarmonyBot {
 	  val nounPlaceholders = countPlaceholders(sentenceTemplate, NOUN_PLACEHOLDER)
 	  val adjectiveList = fileReader.gatherUniqueLines(ADJECTIVES_FILE, adjectivePlaceholders)
 	  val nounList = fileReader.gatherUniqueLines(PERSON_FILE, nounPlaceholders)
+	  val compliment = fillPlaceholders(sentenceTemplate, adjectiveList, nounList)
 	  
-	  val compliment = buildCompliment(sentenceTemplate, adjectiveList, nounList)
-	  println(compliment)
+	  return compliment
   }
   
   def countPlaceholders(sentenceTemplate : String, placeholder : String) : Int = {
     return sentenceTemplate.split(" ").count((s : String) => s.contains(placeholder))
   }
   
-  def buildCompliment(sentenceTemplate : String, adjectives : List[String], nouns : List[String]) : String = {
+  def fillPlaceholders(sentenceTemplate : String, adjectives : List[String], nouns : List[String]) : String = {
     val complimentWithAdjectives = adjectives.foldLeft(sentenceTemplate)((b,a) => b.replaceFirst(ADJECTIVE_PLACEHOLDER, a))
     val fullCompliment = nouns.foldLeft(complimentWithAdjectives)((b,a) => b.replaceFirst(NOUN_PLACEHOLDER, a))
     
