@@ -14,7 +14,7 @@ object HarmonyBot {
   val PERSON_FILE = "res/personDescriptors.txt"
     
   val ADJECTIVE_PLACEHOLDER = "<adjective>"
-  val NOUN_PLACEHOLDER = "<noun>"
+  val PERSON_PLACEHOLDER = "<person>"
   
   def main(args: Array[String]) {
     
@@ -32,7 +32,7 @@ object HarmonyBot {
 	  
 	  val sentenceTemplate = fileReader.getRandomLine(SENTENCE_FILE)
 	  val adjectivePlaceholders = countPlaceholders(sentenceTemplate, ADJECTIVE_PLACEHOLDER)
-	  val nounPlaceholders = countPlaceholders(sentenceTemplate, NOUN_PLACEHOLDER)
+	  val nounPlaceholders = countPlaceholders(sentenceTemplate, PERSON_PLACEHOLDER)
 	  val adjectiveList = fileReader.gatherUniqueLines(ADJECTIVES_FILE, adjectivePlaceholders)
 	  val nounList = fileReader.gatherUniqueLines(PERSON_FILE, nounPlaceholders)
 	  val compliment = fillPlaceholders(sentenceTemplate, adjectiveList, nounList)
@@ -46,7 +46,7 @@ object HarmonyBot {
   
   def fillPlaceholders(sentenceTemplate : String, adjectives : List[String], nouns : List[String]) : String = {
     val complimentWithAdjectives = adjectives.foldLeft(sentenceTemplate)((b,a) => b.replaceFirst(ADJECTIVE_PLACEHOLDER, a))
-    val fullCompliment = nouns.foldLeft(complimentWithAdjectives)((b,a) => b.replaceFirst(NOUN_PLACEHOLDER, a))
+    val fullCompliment = nouns.foldLeft(complimentWithAdjectives)((b,a) => b.replaceFirst(PERSON_PLACEHOLDER, a))
     
     return fullCompliment
   }
