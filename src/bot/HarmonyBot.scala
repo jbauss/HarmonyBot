@@ -45,8 +45,8 @@ object HarmonyBot {
   }
   
   def fillPlaceholders(sentenceTemplate : String, adjectives : List[String], nouns : List[String]) : String = {
-    val complimentWithAdjectives = adjectives.foldLeft(sentenceTemplate)((b,a) => b.replaceFirst(ADJECTIVE_PLACEHOLDER, a))
-    val fullCompliment = nouns.foldLeft(complimentWithAdjectives)((b,a) => b.replaceFirst(PERSON_PLACEHOLDER, a))
+    val complimentWithAdjectives = adjectives.foldLeft(sentenceTemplate)((sentence, adjective) => sentence.replaceFirst(ADJECTIVE_PLACEHOLDER, adjective))
+    val fullCompliment = nouns.foldLeft(complimentWithAdjectives)((sentence, person) => sentence.replaceFirst(PERSON_PLACEHOLDER, person))
     
     return fullCompliment
   }
