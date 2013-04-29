@@ -31,7 +31,7 @@ class HarmonyBot {
       }
       
       twitter.updateStatus(compliment)
-      
+      println("HarmonyBot tweeted: " + compliment)      
       Thread.sleep(THREE_MINUTES_IN_MILLIS)
     }
   }
