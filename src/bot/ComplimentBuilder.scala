@@ -15,10 +15,9 @@ class ComplimentBuilder {
   
   def generateCompliment() : String = {
     def generateCompliment(compliment : String) : String = {
-      if(compliment.length() <= MAX_TWEET_LENGTH && compliment == "")
+      if(compliment.length() <= MAX_TWEET_LENGTH && compliment != "")
         return compliment
 	  else {
-	    
 	    val sentenceTemplate = fileReader.getRandomLine(SENTENCE_FILE)
 		val adjectivePlaceholders = countPlaceholders(sentenceTemplate, ADJECTIVE_PLACEHOLDER)
 		val nounPlaceholders = countPlaceholders(sentenceTemplate, PERSON_PLACEHOLDER)
@@ -28,18 +27,9 @@ class ComplimentBuilder {
 	    
 	    return newCompliment
 	  }
-      
-      return generateCompliment("")
     }
     
-    val sentenceTemplate = fileReader.getRandomLine(SENTENCE_FILE)
-    val adjectivePlaceholders = countPlaceholders(sentenceTemplate, ADJECTIVE_PLACEHOLDER)
-    val nounPlaceholders = countPlaceholders(sentenceTemplate, PERSON_PLACEHOLDER)
-    val adjectiveList = fileReader.gatherUniqueLines(ADJECTIVES_FILE, adjectivePlaceholders)
-    val nounList = fileReader.gatherUniqueLines(PERSON_FILE, nounPlaceholders)
-    val compliment = fillPlaceholders(sentenceTemplate, adjectiveList, nounList)
-  
-    return compliment
+    return generateCompliment("")
   }
   
   def countPlaceholders(sentenceTemplate : String, placeholder : String) : Int = {
