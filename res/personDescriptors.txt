@@ -1,2 +1,5 @@
 human being
 person
+life-form
+individual
+human

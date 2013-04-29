@@ -1,4 +1,5 @@
 You are a <adjective> and <adjective> <person>!
-Your are <adjective> and I like you!
-Someone is thinking of you right now!
+Your are <adjective> and I love that!
 You are <adjective>, <adjective> and <adjective>!
+You seem to be a <adjective> <person>!
+I like that you are so <adjective>!
