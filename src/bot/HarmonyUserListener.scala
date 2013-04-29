@@ -8,6 +8,7 @@ import twitter4j.UserList
 import twitter4j.StallWarning
 import twitter4j.StatusDeletionNotice
 
+//This class is not in use yet
 class HarmonyUserListener extends UserStreamListener {
   
   def onException(ex : Exception) {

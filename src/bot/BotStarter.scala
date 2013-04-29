@@ -11,6 +11,7 @@ object BotStarter {
   val ADJECTIVES_FILE = "res/adjectives.txt"
   val SENTENCE_FILE = "res/sentenceTemplates.txt"
   val PERSON_FILE = "res/personDescriptors.txt"
+  val EMOTICON_FILE = "res/emoticons.txt"
     
   val ADJECTIVE_PLACEHOLDER = "<adjective>"
   val PERSON_PLACEHOLDER = "<person>"
@@ -20,13 +21,6 @@ object BotStarter {
   def main(args: Array[String]): Unit = {
     val harmony = new HarmonyBot()
     harmony.run()
-    
-    //    val harmonyListener = new HarmonyUserListener()
-	//    
-	//    val twitterStream = TwitterStreamFactory.getSingleton();
-	//    twitterStream.addListener(harmonyListener)
-	//    twitterStream.user();
-    
   }
 
 }
