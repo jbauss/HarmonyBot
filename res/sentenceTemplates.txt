@@ -1,5 +1,7 @@
 You are a <adjective> and <adjective> <person>!
-Your are <adjective> and I love that!
+You are <adjective> and I love that!
 You are <adjective>, <adjective> and <adjective>!
 You seem to be a <adjective> <person>!
 I like that you are so <adjective>!
+You look <adjective>!
+You are a <adjective> <person>!
