@@ -7,24 +7,12 @@ import twitter4j.conf.ConfigurationBuilder
 import twitter4j.TwitterStreamFactory
 import twitter4j.UserStreamListener
 
-object HarmonyBot {
+class HarmonyBot {
+  
+  val complimentBuilder = new ComplimentBuilder()
   
   def run() = {
-    
-  }
-  
-  def main(args: Array[String]) {
-    
-    val complimentBuilder = new ComplimentBuilder()
-    
     println(complimentBuilder.generateCompliment)
-    
-//    val harmonyListener = new HarmonyUserListener()
-//    
-//    val twitterStream = TwitterStreamFactory.getSingleton();
-//    twitterStream.addListener(harmonyListener)
-//    twitterStream.user();
-    	  
   }
 
 }
