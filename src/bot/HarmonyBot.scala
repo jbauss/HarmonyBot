@@ -12,7 +12,12 @@ class HarmonyBot {
   val complimentBuilder = new ComplimentBuilder()
   
   def run() = {
-    println(complimentBuilder.generateCompliment)
+    var compliment = complimentBuilder.generateCompliment()
+    
+    if(compliment.size < BotStarter.MAX_TWEET_LENGTH - 3)
+    	compliment = compliment + " :)"
+    	  
+    println(compliment)
   }
 
 }
