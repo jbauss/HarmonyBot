@@ -9,7 +9,6 @@ placid
 resourceful
 conscientious
 capable
-detailed
 reflective
 fair-minded
 instinctive
@@ -194,3 +193,4 @@ amiable
 witty
 painstaking
 knowledgeable
+special
